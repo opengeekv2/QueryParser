@@ -6,6 +6,9 @@ public class QueryParser {
 	{	if ("SENIOR".equals(query)) {
 			return new String[] { "senior" };
 		}
+		if ("JAVA".equals(query)) {
+			return new String[] { "java" };
+		}
 		return new String[] { query };
 	}
 }
