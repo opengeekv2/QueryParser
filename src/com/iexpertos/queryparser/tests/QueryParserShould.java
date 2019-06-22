@@ -21,5 +21,16 @@ class QueryParserShould {
 		assertThat(result.length, is(1));
 		assertThat(result[0], is(expectedResult));
 	}
+	
+	@ParameterizedTest
+	@CsvSource({"SENIOR, senior"})
+	void return_lowercase_the_token_of_a_single_word(String query, String expectedResult) {
+		QueryParser parser = new QueryParser();
+		
+		String[] result = parser.parse(query);
+		
+		assertThat(result.length, is(1));
+		assertThat(result[0], is(expectedResult));
+	}
 
 }
