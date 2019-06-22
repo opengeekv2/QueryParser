@@ -4,19 +4,22 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import com.iexpertos.queryparser.QueryParser;
 
 class QueryParserShould {
 
-	@Test
-	void return_the_token_of_a_single_word() {
+	@ParameterizedTest
+	@CsvSource("senior, senior")
+	void return_the_token_of_a_single_word(String query, String expectedResult) {
 		QueryParser parser = new QueryParser();
 		
-		String[] result = parser.parse("senior");
+		String[] result = parser.parse(query);
 		
 		assertThat(result.length, is(1));
-		assertThat(result[0], is("senior"));
+		assertThat(result[0], is(expectedResult));
 	}
 
 }
