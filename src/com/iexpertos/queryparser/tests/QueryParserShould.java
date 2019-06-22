@@ -23,7 +23,7 @@ class QueryParserShould {
 	}
 	
 	@ParameterizedTest
-	@CsvSource({"SENIOR, senior", "JAVA, java"})
+	@CsvSource({"SENIOR, senior", "JAVA, java", ".NET, .net"})
 	void not_be_case_sensitive(String query, String expectedResult) {
 		QueryParser parser = new QueryParser();
 		
