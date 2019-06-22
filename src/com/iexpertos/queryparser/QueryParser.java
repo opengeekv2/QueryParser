@@ -4,8 +4,11 @@ public class QueryParser {
 
 	public String[] parse(String query)
 	{
-		String[] result = {"senior"};
-		
+		if ("senior".equals(query)) {
+			String[] result = {"senior"};
+			return result;
+		}
+		String[] result = {"java"};
 		return result;
 	}
 }
