@@ -24,7 +24,7 @@ class QueryParserShould {
 	
 	@ParameterizedTest
 	@CsvSource({"SENIOR, senior"})
-	void return_lowercase_the_token_of_a_single_word(String query, String expectedResult) {
+	void not_be_case_sensitive(String query, String expectedResult) {
 		QueryParser parser = new QueryParser();
 		
 		String[] result = parser.parse(query);
