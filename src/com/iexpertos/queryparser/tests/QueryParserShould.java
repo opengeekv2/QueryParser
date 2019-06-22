@@ -12,7 +12,7 @@ import com.iexpertos.queryparser.QueryParser;
 class QueryParserShould {
 
 	@ParameterizedTest
-	@CsvSource("senior, senior")
+	@CsvSource({"senior, senior", "java,java"})
 	void return_the_token_of_a_single_word(String query, String expectedResult) {
 		QueryParser parser = new QueryParser();
 		
